@@ -13,7 +13,7 @@
 	include('config.php');
 	$loggeduserid=$user_check['userid'];
 	$sql="select * from contributions where userid='$loggeduserid' ";
-	$result=pg_query($dbconn,$query);
+	$result=pg_query($dbconn,$sql);
 	while($row=pg_fetch_array($result)){
 			$contributionname=$row['contributionname'];
 			$releasedate=strftime("%b,%d,%Y",strtotime($row['releasedate']));
