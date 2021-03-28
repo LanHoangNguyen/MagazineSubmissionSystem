@@ -24,7 +24,7 @@ if(isset($_GET['contributionid'])){
 
 		function getUsernameById($userid){
 			global $dbconn;
-			$result=pg_query($dbconn,"select username from users where userid=".$loggeduserid."limit 1");
+			$result=pg_query($dbconn,"select username from users where userid=".$userid."limit 1");
 			return pg_fetch_assoc($result)['username'];
 		}
 
