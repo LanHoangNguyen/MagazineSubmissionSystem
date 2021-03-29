@@ -68,7 +68,7 @@ if (isset($_POST['save'])){
 				<label>File</label>
 				<input type="file" name="myfile">
 			</div>
-			<input type="submit" name="upload" value="upload" class="btn btn-primary">
+			<button type="submit" name="save">Upload</button>
 		</form>
 	</div>
 </body>
