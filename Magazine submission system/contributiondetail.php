@@ -8,7 +8,6 @@ if(isset($_GET['contributionid'])){
 	$contributionid=preg_replace('#[^0-9]', '', $_GET['contributionid']);
 	$sql=pg_query("select * from contributions where contributionid=".$contributionid." limit 1");
 	$contributionCount=pg_num_rows($sql);
-	$loggeduserid=$user_check['userid'];
 	$uploaddir = '/home/postgres/';
 	if($contributionCount>0){
 		while($row=pg_fetch_array($sql)){
