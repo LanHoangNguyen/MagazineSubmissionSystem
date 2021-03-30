@@ -2,13 +2,13 @@
 include('header.php');
 include('session.php');
 include('config.php');
+include('contributionupload.php);
 ?>
 <?php
 if(isset($_GET['contributionid'])){
 	$contributionid=preg_replace('#[^0-9]', '', $_GET['contributionid']);
 	$sql=pg_query("select * from contributions where contributionid=".$contributionid." limit 1");
 	$contributionCount=pg_num_rows($sql);
-	$uploaddir = '/home/postgres/';
 	if($contributionCount>0){
 		while($row=pg_fetch_array($sql)){
 			$contributionname=$row['contributionname'];
@@ -124,7 +124,7 @@ else
 	<h1><?php echo $contributionname ?></h1>
 	<strong>>Posted date: <?php echo $releasedate ?></strong>
 	<strong>Due date: <?php echo $duedate ?></strong>
-	<iframe src="<?php echo $uploadir.$contributionname  ?>" style="width: 90% height=500px"></iframe>
+	<iframe src="<?php echo $destination  ?>" style="width: 90% height=500px"></iframe>
 	<div class="col-md-6 col-md-offset-3 comments-section">
 		<form class="clearfix" action="contributiondetail.php" method="POST" id="comment_form">
 			<textarea name="comment_text" id="comment_text" class="form-control" cols="30" rows="3" ></textarea>
