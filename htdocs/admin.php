@@ -15,6 +15,5 @@ include('config.php');
 <body>
 	<a href="accountmanagement.php">Create new accounts</a>
 	<a href="closuredate.php">Set and edit closure date</a>
-	<a href="logout.php">Log out</a>
 </body>
 </html>
